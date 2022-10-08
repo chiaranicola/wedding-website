@@ -147,7 +147,7 @@ $(document).ready(function () {
     });
 
     /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
+    var myCalendar1 = createCalendar({
         options: {
             class: '',
             // You can pass an ID. If you don't, one will be generated for you
@@ -155,28 +155,57 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Matrimonio Nicola & Chiara",
+            title: "Matrimonio Nicola & Chiara - Cerimonia",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('26 May 2023 10:30 UTC+2'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('26 May 2023 11:30 UTC+2'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Sala di Sant\'Agata (presso Circolino) - Vicolo Sant\'Agata 19, Città Alta, Bergamo (BG)',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: ""
         }
     });
 
-    $('#add-to-cal').html(myCalendar);
+    $('#add-to-cal1').html(myCalendar);
 
+    var myCalendar2 = createCalendar({
+        options: {
+            class: '',
+            // You can pass an ID. If you don't, one will be generated for you
+            id: ''
+        },
+        data: {
+            // Event title
+            title: "Matrimonio Nicola & Chiara - Ricevimento",
+
+            // Event start date
+            start: new Date('26 May 2023 13:00 UTC+2'),
+
+            // Event duration (IN MINUTES)
+            // duration: 120,
+
+            // You can also choose to set an end time
+            // If an end time is set, this will take precedence over duration
+            end: new Date('26 May 2023 18:00 UTC+2'),
+
+            // Event Address
+            address: 'Tenuta Cascina dei Frati - Via Beder, 10, Brusaporto (BG)',
+
+            // Event Description
+            description: ""
+        }
+    });
+
+    $('#add-to-cal2').html(myCalendar);
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
