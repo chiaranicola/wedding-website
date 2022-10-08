@@ -155,7 +155,7 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Matrimonio Nicola & Chiara",
 
             // Event start date
             start: new Date('Nov 27, 2017 10:00'),
@@ -183,12 +183,10 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Un istante</strong>, salvataggio in corso...'));
 
-        if (MD5($('#invite_code').val()) !== 'd8d24528ce20365ddb55b988ef3ec469'
-            && MD5($('#invite_code').val()) !== '5cb0bc89deff11a0a3583e24a1ee3a27'
-            && MD5($('#invite_code').val()) !== '13030fecad69e0509b03407293e23a12') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if (MD5($('#invite_code').val()) !== 'bc7316929fe1545bf0b98d114ee3ecb8') {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Spiacente</strong>, il tuo codice d\'invito non è corretto. Verifica che il codice inserito sia uguale a quello presente sulla partecipazione.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxEzknQ8mAjn9xE00johJUvI-34UTKpI-oUlgM2-KU-p7UMI0NGr3vVDGwbLSr_QBDEmg/exec', data)
                 .done(function (data) {
@@ -202,7 +200,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Spiacente</strong>, errore interno. Riprova più tardi.'));
                 });
         }
     });
