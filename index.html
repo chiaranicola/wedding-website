@@ -214,7 +214,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>R.S.V.P.</h3>
-                <p>Gradiremmo conferma entro il 19 Febbraio, con un messaggio al numero indicato sulla partecipazione o direttamente qui sotto.</p>
+                <p>Gradiremmo conferma entro Febbraio, con un messaggio al numero indicato sulla partecipazione o direttamente qui sotto.</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -222,10 +222,19 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Nome e cognome"
+                                                                 placeholder="Nome"
                                                                  required>
                             </div>
                         </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="lastname" class=""
+                                                                 placeholder="Cognome"
+                                                                 required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-phone"></i><input type="tel" name="phone" class=""
@@ -233,22 +242,12 @@
                                                                      required>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i><input type="number" name="people" class="" min="1"
                                                                   max="4"
                                                                   placeholder="Quante persone?"
                                                                   required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="text" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Codice d'invito"
-                                                                required>
                             </div>
                         </div>
                     </div>

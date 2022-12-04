@@ -208,24 +208,20 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Un istante</strong>, salvataggio in corso...'));
 
-        if (MD5($('#invite_code').val()) !== 'bc7316929fe1545bf0b98d114ee3ecb8') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Spiacente</strong>, il tuo codice d\'invito non è corretto. Verifica che il codice inserito sia uguale a quello presente sulla partecipazione.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbxEzknQ8mAjn9xE00johJUvI-34UTKpI-oUlgM2-KU-p7UMI0NGr3vVDGwbLSr_QBDEmg/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Spiacente</strong>, errore interno. Riprova più tardi.'));
-                });
-        }
+        $.post('https://script.google.com/macros/s/AKfycbxEzknQ8mAjn9xE00johJUvI-34UTKpI-oUlgM2-KU-p7UMI0NGr3vVDGwbLSr_QBDEmg/exec', data)
+            .done(function (data) {
+                console.log(data);
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+            })
+            .fail(function (data) {
+                console.log(data);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Spiacente</strong>, errore interno. Riprova più tardi.'));
+            });
     });
 
 });
